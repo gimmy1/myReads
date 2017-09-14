@@ -23,15 +23,15 @@ class BookSearch extends Component {
           results = results.map((book) => {
             const bookInShelf = this.props.books.find(b=>b.id===book.id)
             if (bookInShelf) {
-              book.shelf = bookInShelf
+              book.shelf = bookInShelf.shelf
             }
             else {
               book.shelf = 'None'
             }
             return book
           })
-          this.setState({results})
         }
+        this.setState({results})
     });
   };
   render() {
